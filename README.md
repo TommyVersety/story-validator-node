@@ -131,6 +131,6 @@ story validator stake \
 ```
 - Replace `VALIDATOR_PUB_KEY_IN_BASE64` with the value you will get after running this command
 ```bash
-curl -s localhost:26657/status | jq -r '.result.validator_info.value'
+curl -s localhost:26657/status | jq -r '.result.validator_info.pub_key.value'
 ```
 - Check your validator on [Explorer](https://testnet.story.explorers.guru/)
