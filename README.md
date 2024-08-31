@@ -25,7 +25,7 @@ cd ~/.story/story && wget https://story-geth-binaries.s3.us-west-1.amazonaws.com
 screen -S story
 ```
 ```bash
-story-linux-amd64-0.9.11-2a25df1/story init --network iliad –moniker ZunXBT --force
+story-linux-amd64-0.9.11-2a25df1/story init --network iliad –moniker "NAME_OF_YOUR_MONIKER" --force
 ```
 ```bash
 story-linux-amd64-0.9.11-2a25df1/story run
