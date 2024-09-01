@@ -95,6 +95,9 @@ story-linux-amd64-0.9.11-2a25df1/story run
 ```bash
 echo $(( $(curl -s https://staking.testnet.storyrpc.io/api/network_status | jq -r '.msg.consensus_block_height') - $(curl -s localhost:26657/status | jq -r '.result.sync_info.latest_block_height') ))
 ```
+![image](https://github.com/user-attachments/assets/e731eef9-427e-4364-a7a6-ce42bca1cc25)
+
+- If you see block number is reducing in each checking, you are good
 - You can also simply use the below command to check `catching_up` is `false`
 ```bash
 curl -s localhost:26657/status | jq
