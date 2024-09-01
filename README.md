@@ -71,7 +71,7 @@ echo $(( $(curl -s https://staking.testnet.storyrpc.io/api/network_status | jq -
 ```bash
 cd
 ```
-- Reattach with `geth` screen session now using 'screen -r geth` command , and then use `Ctrl+C` to stop it and then detach from this screen session using `Ctrl+A+D`
+- Reattach with `geth` screen session now using `screen -r geth` command , and then use `Ctrl+C` to stop it and then detach from this screen session using `Ctrl+A+D`
 - Now visit [this docs](https://service.josephtran.xyz/testnet/story/snapshot)  by **Joseph Tran**, You don't need to stop node using his command, as our command is different, you just do these things from that doc `Download Geth-data and Story-data` , `Backup priv_validator_state.json` , `Remove old data` , `Extract Story-data and geth-data` , `Move priv_validator_state.json back`
 - Now come back to my guide and use this command to restart again
 ```bash
