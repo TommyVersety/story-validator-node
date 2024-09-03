@@ -52,15 +52,18 @@ story-linux-amd64-0.9.11-2a25df1/story run
 ```
 - After running this command, you may face problem, so to resolve this use the below commands
 - First use `Ctrl+C` to stop this
-- Now use the below command to edit `config.toml`
+- Now, change directory to `home`
 ```bash
-nano config/config.toml
+cd
 ```
-- You need to use `W` `A` `S` `D` key to move the cursor, Use `S` button to scroll down, You will see a `P2P configuration section`, Initially you will find `persistent_peers=""`, remove this line and then copy the below mentioned peer id and paste it there
+- Now use the below command
 ```bash
-persistent_peers= "f16c644a6d19798e482edcfe5bd5728a22aa5e0d@65.108.103.184:26656,9fc21eaa5f39f3611875a951775c5b1ebdf032ee@84.32.186.154:26656,a320f8a15892bddd7b5502527e0d11c5b5b9d0e3@69.67.150.107:29931,537b4c11a17f282bd9f84ba578e5998944c49c79@176.9.155.156:28656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$(curl -sS https://story-testnet-rpc.polkachu.com/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)\"/" $HOME/.story/story/config/config.toml
 ```
-- Save this file using `Ctrl+X` then `Y` and then press `Enter`
+- Now again change directory to `.story/story` and run `story` using below command
+```bash
+story-linux-amd64-0.9.11-2a25df1/story run
+```
 - If you check now, you'll notice a significant difference between your node and the latest block. Your node needs to synchronize with the most recent block
 ```bash
 echo $(( $(curl -s https://staking.testnet.storyrpc.io/api/network_status | jq -r '.msg.consensus_block_height') - $(curl -s localhost:26657/status | jq -r '.result.sync_info.latest_block_height') ))
