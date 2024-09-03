@@ -16,7 +16,7 @@ mkdir -p ~/.story/geth ~/.story/story
 ```
 - Install necessary dependencies
 ```bash
-sudo apt install screen curl git make jq build-essential gcc unzip wget lz4 aria2 -y
+sudo apt install screen curl git make jq build-essential gcc unzip wget lz4 aria2 pv -y
 ```
 - Download and extract `geth` binary file in `~/.story/geth` directory
 ```bash
