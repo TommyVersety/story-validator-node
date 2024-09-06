@@ -122,7 +122,7 @@ cat $HOME/.story/story/config/private_key.txt
 ```
 - Now create a validator using this command
 ```bash
-story validator create --stake 1000000000000000000 --private-key PRIVATE_KEY_OF_EVM_YOU_COPIED_IN_THE_AVOBE_STEP
+$HOME/.story/story/story-linux-amd64-0.9.11-2a25df1/story validator create --stake 1000000000000000000 --private-key PRIVATE_KEY_OF_EVM_YOU_COPIED_IN_THE_AVOBE_STEP
 ```
 - Now copy this validator wallet's pruvate key as well and save it
 ```bash
@@ -130,10 +130,7 @@ cat $HOME/.story/story/config/priv_validator_key.json
 ```
 - To participate in consensus, at least 1024 IP must be staked (equivalent to 1000000000000000000 wei) as of now lol
 ```bash
-story validator stake \
-   --validator-pubkey "VALIDATOR_PUB_KEY_IN_BASE64" \
-   --stake 1024000000000000000000 \
-   --private-key PRIVATE_KEY_OF_EVM_YOU_COPIED_EARLIER
+$HOME/.story/story/story-linux-amd64-0.9.11-2a25df1/story validator stake --validator-pubkey "VALIDATOR_PUB_KEY_IN_BASE64" --stake 1024000000000000000000 --private-key PRIVATE_KEY_OF_EVM_YOU_COPIED_EARLIER
 ```
 - Replace `VALIDATOR_PUB_KEY_IN_BASE64` with the value you will get after running this command
 ```bash
